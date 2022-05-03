@@ -1,0 +1,33 @@
+!!!ALL METHODS ARE "GET"
+!!!YOU WILL RECIEVE PAGE INFORMATION ON THE HEADER OF THE RESPONSE
+
+ABOUT:
+    http://127.0.0.1:8000/api/about/1
+
+CARS:
+   http://127.0.0.1:8000/api/car/
+   http://127.0.0.1:8000/api/car/<pk>
+
+
+HOUSE:
+    http://127.0.0.1:8000/api/house/
+    http://127.0.0.1:8000/api/house/<pk>
+
+
+PROPERY: (for front page)
+    http://127.0.0.1:8000/api/property/
+    http://127.0.0.1:8000/api/property/<pk>
+
+
+TO SEARCH:(only for property endpoint)
+    http://127.0.0.1:8000/api/property/?search=<keyword>
+
+FILTER:(not for property endpoint)
+    eg 1)
+        http://127.0.0.1:8000/api/car/?transsmission=manual
+
+    eg 2)
+        http://127.0.0.1:8000/api/car/?transsmission=manual&max_price=200
+
+    eg 3) (you can include "page/p")
+        http://127.0.0.1:8000/api/car/?transsmission=manual&max_price=200&min_price=20&p=2

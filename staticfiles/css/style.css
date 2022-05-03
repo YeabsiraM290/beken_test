@@ -1,0 +1,307 @@
+body {
+    overflow-x: visible;
+    background-color: rgb(238, 242, 255);
+    font-family: 'Karla', sans-serif;
+}
+
+
+/* large navigation */
+
+.large-nav {
+    background: linear-gradient(90deg, rgba(19, 88, 107, 1) 6%, rgba(31, 128, 149, 1) 35%, rgba(40, 177, 181, 1) 64%, rgb(81, 174, 197) 98%);
+    font-family: Poppins, sans-serif;
+    overflow: hidden;
+}
+
+.links {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255) !important;
+}
+
+.site-brand {
+    float: left;
+    margin-left: 1rem;
+    animation: flicker 1.5s infinite;
+}
+
+.brand {
+    display: inline;
+    font-family: neon;
+    color: #FB4264;
+    font-weight: 100;
+    font-size: 3rem;
+}
+
+.brand-sub {
+    font-size: 1.3rem;
+    font-family: neon;
+    color: #426DFB;
+    font-weight: 300;
+}
+
+.menu-links {
+    margin-top: 1.5rem;
+    float: right;
+    margin-right: 1.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.search {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.search input[type=text] {
+    border-bottom-right-radius: 0rem !important;
+    border-top-right-radius: 0rem !important;
+    border-radius: 0.3rem;
+    border: none;
+    width: 35rem;
+    height: 2.3rem;
+}
+
+.search button {
+    background-color: #f3ca20;
+    height: 2.3rem;
+    width: 2rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* nav brand lighting */
+
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.brand,
+.mobile-brand {
+    animation: neon 5s ease infinite;
+    -moz-animation: neon 5s ease infinite;
+    -webkit-animation: neon 5s ease infinite;
+}
+
+@keyframes neon {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16;
+        color: #FED128;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #fffb29, 0 0 1.5vw #fff236, 0 0 5vw #ecff46, 0 0 5vw #ffea2c;
+        color: #ffc800;
+    }
+}
+
+.brand-sub,
+.mobile-brand-sub {
+    animation: flux 3s linear infinite;
+    -moz-animation: flux 3s linear infinite;
+    -webkit-animation: flux 3s linear infinite;
+}
+
+@keyframes flux {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF;
+        color: #c0f7ef;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180;
+        color: #acf0ff;
+    }
+}
+
+
+/* moblie menu */
+
+.mobile-search {
+    display: inline-block;
+}
+
+.mobile-search input[type=text] {
+    background-color: #e4e4e4;
+    border-bottom-right-radius: 0rem !important;
+    border-top-right-radius: 0rem !important;
+    border-radius: 0.3rem;
+    border: none;
+    width: 81.1vw;
+    height: 2.3rem;
+}
+
+.mobile-search button {
+    background-color: #f3ca20;
+    height: 2.3rem;
+    width: 2.5rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+}
+
+#hamburger-icon {
+    background: linear-gradient(90deg, rgb(16, 73, 88) 6%, rgb(20, 77, 90) 35%, rgb(39, 120, 122) 64%, rgb(62, 144, 165) 98%);
+    display: none;
+    top: 0px;
+    width: 100vw;
+    height: 4rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+#hamburger-icon .bars {
+    width: 30px;
+    height: 3px;
+    background-color: yellow;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+    opacity: 0;
+}
+
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.mobile-menu {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mobile-menu li {
+    padding: 5px;
+}
+
+.mobile-menu li a {
+    color: rgb(189, 189, 4) !important;
+}
+
+.mobile-menu a:hover {
+    color: white !important;
+    font-size: 1.2rem;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: black;
+    z-index: 3;
+}
+
+.mobile-menu li {
+    margin-bottom: 10px;
+}
+
+.mobile-searchbar {
+    margin: 1rem 0.7rem !important;
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .mobile-searchbar {
+        display: block !important;
+    }
+    .large-nav {
+        display: none;
+    }
+    #hamburger-icon {
+        display: block;
+    }
+    .mobile-brand-con {
+        text-decoration: none;
+        animation: flicker 1.5s infinite;
+    }
+    .mobile-brand {
+        display: inline;
+        font-family: neon;
+        color: #FB4264;
+        font-weight: 100;
+        font-size: 2rem;
+    }
+    .mobile-brand-sub {
+        font-size: 1rem;
+        font-family: neon;
+        color: #426DFB;
+        font-weight: 300;
+    }
+    .page-body {
+        margin: 0.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .space {
+        margin-top: 2rem !important;
+    }
+    .error-con p {
+        font-size: 1rem !important;
+    }
+}
+
+footer {
+    box-shadow: 0 0 10px #cccccc, 0 0 10px #cccccc, 0 0 10px #cccccc, 0 0 10px #cccccc;
+    color: black !important;
+}
+
+.pagination {
+    display: block;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: rgba(19, 88, 107, 1);
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.error-con {
+    height: 100vh;
+}
+
+.error-con p {
+    color: grey;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

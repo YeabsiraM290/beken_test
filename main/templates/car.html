@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        onerror="this.onerror=null;this.href='assets/css/bootstrap.min.css';this.removeAttribute('integrity');this.removeAttribute('crossorigin');"
+        integrity="..." crossorigin="..." />
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/car_house.css' %}">
+
+</head>
+
+<body>
+
+    <!-- large screen navigation bar -->
+    <div class="large-nav text-center ">
+
+        <a href="/home" class="site-brand links">
+            <div class="brand">AB</div> <span class="brand-sub">Broker</span>
+        </a>
+
+        <form class="search" action="search">
+            <input type="text" id="search-box" required data-error="Please enter a search term" placeholder="Search..."
+                name="search">
+            <button type="submit" id="seacrh-btn"><i class="fa fa-search"></i></button>
+        </form>
+
+        <a href="contact" class="menu-links links"><span><i class="fa fa-phone"></i></span> Contact</a>
+        <a href="house" class="menu-links links"><span><i class="fa fa-home"></i></span> House</a>
+        <a href="car" class="menu-links links"><span><i class="fa fa-car"></i></span> Cars</a>
+
+    </div>
+
+    <!-- moblie navigation -->
+    <div id="hamburger-icon">
+
+        <div class="row">
+            <div class="col-4">
+                <div class="bar1 bars"></div>
+                <div class="bar2 bars"></div>
+                <div class="bar3 bars"></div>
+            </div>
+
+            <div class="col-8 center-logo">
+                <a href="/home" class="mobile-brand-con">
+                    <div class="mobile-brand">AB</div> <span class="mobile-brand-sub">Broker</span>
+                </a>
+            </div>
+        </div>
+
+        <ul class="mobile-menu">
+            <li> <a href="house" class="menu-links links"><span><i class="fa fa-home"></i></span> House</a></li>
+            <li> <a href="car" class="menu-links links"><span><i class="fa fa-car"></i></span> Cars</a></li>
+            <li> <a href="contact" class="menu-links links"><span><i class="fa fa-phone"></i></span> Contact</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Mobile search bar -->
+    <div class="mobile-searchbar">
+        <form class="mobile-search" action="search">
+            <input type="text" required data-error="Please enter a search term" placeholder=" Search..." name="search">
+            <button type="submit" id="seacrh-btn"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+
+    <div class="page-body mt-5">
+
+
+        <div class="row">
+
+            <div class="col-md-3 filter-tab">
+
+                <div class="row filter-option mt-3">
+                    <div class="col">
+                        <label class="filter-option-lable">Date</label>
+                        <select id="date" class="select-form">
+                            <option value="new">Recently added</option>
+                            <option value="old">oldest year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row filter-option mt-4">
+                    <div class="col">
+                        <label class="filter-option-lable">Price</label>
+                        <select id="price" class="select-form">
+
+                            <option value="high">Higest Price</option>
+                            <option value="low">Lowest Price</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row filter-option mt-4">
+                    <div class="col">
+                        <label class="filter-option-lable">Transmission</label>
+                        <select id="transmission" class="select-form">
+                            <option value="" selected="">All</option>
+                            <option value="manual">Manual</option>
+                            <option value="automatic">Auto</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+                    <label class="label-filter">Year</label>
+
+                    <div class="col">
+
+                        <select class="select-form-filter" id="year_start">
+
+                            <option value="" hidden="" selected="">From</option>
+                            <option value="1980">1980</option>
+                            <option value="1990">1990</option>
+                            <option value="2000">2000</option>
+                            <option value="2010">2010</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+
+                    </div>
+
+                    <div class="col">
+
+                        <select class="select-form-filter" id="year_end">
+                            <option value="" hidden="">To</option>
+                            <option value="1980">1980</option>
+                            <option value="1990">1990</option>
+                            <option value="2000">2000</option>
+                            <option value="2010">2010</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <label class="label-filter" for="">Price</label>
+
+                    <div class="col">
+
+                        <select class="select-form-filter" id="price_min">
+                            <option value="" hidden="" selected="">Min</option>
+                            <option value="500000">500000</option>
+                            <option value="750000">750000</option>
+                            <option value="1000000">1000000</option>
+                            <option value="1500000">1500000</option>
+                            <option value="2000000">2000000</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <select class="select-form-filter" id="price_max">
+                            <option value="" hidden="">Max</option>
+                            <option value="500000">500000</option>
+                            <option value="750000">750000</option>
+                            <option value="1000000">1000000</option>
+                            <option value="1500000">1500000</option>
+                            <option value="2000000">2000000</option>
+                        </select>
+
+                    </div>
+
+                </div>
+                <button type="submit" id="filter_btn"
+                    class="btn submit-btn btn-primary mt-3 text-center">Submit</button>
+            </div>
+            <div class="col-md-9">
+                <div class="content">
+                    <div class="row text-center"></div>
+                    <div class="col-md mb-3">
+                        <div class="container">
+                            <div class="row items-con">
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="space"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <div class="text-center mb-4">
+        <div class="pagination">
+
+
+        </div>
+    </div>
+
+    <footer id="sticky-footer" class="flex-shrink-0 py-4">
+        <div class="container text-center">
+            <small>Copyright &copy; Your Website</small>
+        </div>
+    </footer>
+
+    <script src="{% static '/js/nav.js' %}"></script>
+    <script src="{% static '/js/car.js' %}"></script>
+    <script src="{% static '/js/search.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        if (!window.bootstrap) { // the bootstrap object is not present
+            var newScript = document.createElement("script");
+            newScript.setAttribute("src", "assets/js/bootstrap.bundle.min.js");
+            document.getElementsByTagName("head")[0].appendChild(newScript);
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Search results</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    onerror="this.onerror=null;this.href='assets/css/bootstrap.min.css';this.removeAttribute('integrity');this.removeAttribute('crossorigin');"
+    integrity="..." crossorigin="..." />
+
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+</head>
+
+<body>
+
+  <!-- large screen navigation bar -->
+  <div class="large-nav text-center ">
+
+    <a href="/home" class="site-brand links">
+      <div class="brand">AB</div> <span class="brand-sub">Broker</span>
+    </a>
+
+    <form class="search" action="search">
+      <input type="text" id="search-box" required data-error="Please enter a search term" placeholder="Search..."
+        name="search">
+      <button type="submit" id="seacrh-btn"><i class="fa fa-search"></i></button>
+    </form>
+
+    <a href="contact" class="menu-links links"><span><i class="fa fa-phone"></i></span> Contact</a>
+    <a href="house" class="menu-links links"><span><i class="fa fa-home"></i></span> House</a>
+    <a href="car" class="menu-links links"><span><i class="fa fa-car"></i></span> Cars</a>
+
+  </div>
+
+  <!-- moblie navigation -->
+  <div id="hamburger-icon">
+
+    <div class="row">
+      <div class="col-4">
+        <div class="bar1 bars"></div>
+        <div class="bar2 bars"></div>
+        <div class="bar3 bars"></div>
+      </div>
+
+      <div class="col-8 center-logo">
+        <a href="/home" class="mobile-brand-con">
+          <div class="mobile-brand">AB</div> <span class="mobile-brand-sub">Broker</span>
+        </a>
+      </div>
+    </div>
+
+    <ul class="mobile-menu">
+      <li> <a href="house" class="menu-links links"><span><i class="fa fa-home"></i></span> House</a></li>
+      <li> <a href="car" class="menu-links links"><span><i class="fa fa-car"></i></span> Cars</a></li>
+      <li> <a href="contact" class="menu-links links"><span><i class="fa fa-phone"></i></span> Contact</a></li>
+    </ul>
+
+  </div>
+
+  <!-- Mobile search bar -->
+  <div class="mobile-searchbar">
+    <form class="mobile-search" action="search">
+      <input type="text" required data-error="Please enter a search term" placeholder=" Search..." name="search">
+      <button type="submit" id="seacrh-btn"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+  <!-- index body -->
+
+  <div class="page-body mt-5">
+    <div class="content">
+      <div class="row items-con text-center">
+
+
+
+      </div>
+      <div class="space"></div>
+    </div>
+
+  </div>
+
+  <div class="text-center mb-4">
+    <div class="pagination">
+
+
+    </div>
+  </div>
+
+  <footer id="sticky-footer" class="flex-shrink-0 py-4">
+    <div class="container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+  </footer>
+
+  <script src="{% static '/js/nav.js' %}"></script>
+  <script src="{% static '/js/search.js' %}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    if (!window.bootstrap) { // the bootstrap object is not present
+      var newScript = document.createElement("script");
+      newScript.setAttribute("src", "assets/js/bootstrap.bundle.min.js");
+      document.getElementsByTagName("head")[0].appendChild(newScript);
+    }
+  </script>
+
+</body>
+
+</html>
